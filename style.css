@@ -1,0 +1,698 @@
+/* === Base Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background: #f5f3ee;
+}
+
+/* === Container === */
+.advertorial-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* === Advertorial Label === */
+.advertorial-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* === Hero Section === */
+.hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hero .headline {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111;
+  line-height: 1.3;
+}
+
+.hero .subheadline {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.hero .cta-btn {
+  display: inline-block;
+  padding: 16px 32px;
+  background: #ff6a00;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hero .cta-btn:hover {
+  background: #e65c00;
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* === Content Blocks === */
+.content-block {
+  margin-bottom: 50px;
+}
+
+.content-block h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.content-block p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.content-block img {
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+/* === Reviews Section === */
+.reviews {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 50px;
+}
+
+.reviews h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.review {
+  margin-bottom: 20px;
+}
+
+.review .stars {
+  color: #ffb400;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.review p {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+/* === Final CTA === */
+.cta-final {
+  text-align: center;
+  margin: 50px 0;
+  padding: 30px;
+  background: #fff8f0;
+  border: 2px solid #ff6a00;
+  border-radius: 8px;
+}
+
+.cta-final h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.cta-final p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.cta-final .cta-btn {
+  background: #ff6a00;
+  padding: 16px 32px;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* === Social Share === */
+.social-share {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.social-share p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #666;
+}
+
+.share-btn {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.share-btn.fb { background: #3b5998; }
+.share-btn.tw { background: #1da1f2; }
+.share-btn.wa { background: #25d366; }
+
+.share-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* === Footer === */
+footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #eee;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin: 0 12px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: #777;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .hero .headline {
+    font-size: 22px;
+  }
+  .hero .subheadline {
+    font-size: 16px;
+  }
+  .content-block h2 {
+    font-size: 20px;
+  }
+  .cta-final h2 {
+    font-size: 22px;
+  }
+  .cta-final p {
+    font-size: 16px;
+  }
+  .hero .cta-btn,
+  .cta-final .cta-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+/* Main container */
+.hero-section {
+  background: #f5f3ee;
+  padding: 30px;
+  max-width: 700px;   /* tighter width */
+  margin: 0 auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+/* Advertorial Label */
+.advertorial-label {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+/* Headline */
+.hero-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+/* Hero Image */
+.hero-image img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* Reviews Row */
+.reviews-highlight {
+  font-size: 15px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.reviews-highlight strong {
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.reviews-highlight .stars {
+  color: #f5a623; /* gold stars */
+  margin: 0 5px;
+  font-size: 16px;
+}
+
+.review-text {
+  color: #555;
+}
+
+/* Logos Row */
+.featured-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* spacing between logos */
+  margin: 20px 0 30px;
+}
+
+.featured-logos img {
+  height: 30px;
+  width: auto;
+  opacity: 0.8;
+}
+
+/* Italic Subtext */
+.subtext {
+  font-size: 14px;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Body Text */
+.body-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.featured-logos {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.featured-logos img {
+  max-width: 300px;  /* adjust size to match the advertorial */
+  height: auto;
+  opacity: 0.9; /* optional, to make it blend softer */
+}
+
+.story-block {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  padding: 0 20px;
+  color: #1f3b3a;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.story-block p + p {
+  margin-top: 16px;
+}
+
+.story-block strong {
+  font-weight: 700;
+}
+
+.story-block .ask {
+  margin-top: 18px;
+  font-size: 17px;
+}
+/* === What is it? section === */
+.what-is {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  padding: 0 20px;
+  color: #1f3b3a;
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.section-title {
+  font-size: 2rem;
+  line-height: 1.25;
+  color: #1f3b3a;
+  margin: 0 0 14px;
+  font-weight: 800;
+}
+
+.em-link {
+  color: #1f3b3a;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.what-is-figure {
+  margin: 16px 0 18px;
+}
+
+.what-is-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.what-is-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-top: 10px;
+}
+
+.what-is-list li {
+  margin: 10px 0;
+}
+
+
+/* === How it works section === */
+.how-it-works {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  padding: 0 20px;
+  color: #1f3b3a;
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.how-it-works p + p {
+  margin-top: 14px;
+}
+
+.how-it-works strong {
+  font-weight: 700;
+}
+
+.how-figure {
+  margin: 18px 0;
+}
+
+.how-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* small note style under Hur fungerar det */
+.how-it-works .note {
+  font-size: 14px;
+  color: #1f3b3a;
+  margin: 10px 0 14px;
+  line-height: 1.6;
+}
+.how-it-works .note em {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* === All Files section === */
+.all-files {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  padding: 0 20px;
+  color: #1f3b3a;
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.all-files p + p {
+  margin-top: 14px;
+}
+
+.all-files-figure {
+  margin: 18px 0;
+}
+
+.all-files-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+
+/* === Bottom Line section === */
+.bottom-line {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  padding: 0 20px;
+  color: #1f3b3a;
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.bottom-line p + p {
+  margin-top: 14px;
+}
+
+.bottom-figure {
+  margin: 20px 0 0;
+}
+
+.bottom-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+
+/* Grey heading box */
+.love-heading-box {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #e1e6e3;   /* grey background */
+  border-radius: 10px 10px 0 0;
+  padding: 18px 20px;
+}
+
+.love-heading-title {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.3;
+  font-weight: 800;
+  color: #1f3b3a;
+}
+
+/* White box with bullet points */
+.love-points-box {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  background: #ffffff;   /* white background */
+  border-radius: 0 0 10px 10px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.love-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0;
+  color: #1f3b3a;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.love-list li {
+  margin: 10px 0;
+}
+
+
+/* As Seen In */
+.as-seen {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  padding: 0 20px;
+  color: #1f3b3a;
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+.section-title.center { 
+  text-align: center; 
+}
+
+.as-seen-logos {
+  display: flex;
+  justify-content: center;
+  margin: 14px 0 18px;
+}
+.as-seen-logos img {
+  max-width: 520px;   /* tweak to your taste */
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Promo banner (two-box style) */
+.promo-banner {
+  max-width: 700px;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.promo-banner__bar {
+  background: #20a052; /* green */
+  color: #fff;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: .5px;
+  padding: 12px;
+}
+
+.promo-banner__body {
+  background: #ffffff; /* white */
+  padding: 16px;
+  color: #1f3b3a;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* CTA button */
+.cta-button {
+  max-width: 700px;
+  margin: 16px auto 40px;
+  text-align: center;
+}
+
+.cta-button a {
+  display: block;
+  background: linear-gradient(to bottom, #f9d65c, #f0b933);
+  color: #1f1f1f;
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.2s ease;
+}
+
+.cta-button a:hover {
+  background: linear-gradient(to bottom, #f7c945, #e0a82c);
+}
+
+/* Reviews section */
+.real-reviews {
+  max-width: 800px;
+  margin: 0 auto 56px;
+  padding: 0 20px;
+  text-align: center;
+  color: #1f3b3a;
+}
+
+.reviews-title {
+  font-size: 2rem;
+  line-height: 1.25;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.review-item {
+  margin: 18px auto 28px;
+  max-width: 720px;
+}
+
+.stars {
+  color: #f5b50a;          /* gold stars */
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.real-reviews blockquote {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #2b4746;
+  margin: 0 auto 8px;
+  max-width: 720px;
+}
+
+.real-reviews cite {
+  display: block;
+  font-style: normal;
+  color: #54706e;
+  font-weight: 600;
+}
+
+/* Sticky offer bar */
+.sticky-offer-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, #f9d65c, #f0b933);
+  text-align: center;
+  padding: 12px 20px;
+  z-index: 9999; /* keeps it above all content */
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+}
+
+.sticky-offer-bar a {
+  color: #1f1f1f;
+  font-weight: 800;
+  font-size: 16px;
+  text-decoration: none;
+  letter-spacing: .5px;
+}
+
+.sticky-offer-bar a:hover {
+  text-decoration: underline;
+}
+
+.em-link {
+  color: #0066cc;              /* blue link color */
+  font-weight: 700;
+  text-decoration: underline;  /* underline to show it's clickable */
+  text-underline-offset: 2px;
+}
+
+.em-link:hover {
+  color: #004999;              /* darker blue on hover */
+}
