@@ -215,29 +215,8 @@ footer {
   text-decoration: underline;
 }
 
-/* === Responsive === */
-@media (max-width: 768px) {
-  .hero .headline {
-    font-size: 22px;
-  }
-  .hero .subheadline {
-    font-size: 16px;
-  }
-  .content-block h2 {
-    font-size: 20px;
-  }
-  .cta-final h2 {
-    font-size: 22px;
-  }
-  .cta-final p {
-    font-size: 16px;
-  }
-  .hero .cta-btn,
-  .cta-final .cta-btn {
-    width: 100%;
-    max-width: 300px;
-  }
-}
+
+
 /* Main container */
 .hero-section {
   background: #f5f3ee;
@@ -660,30 +639,9 @@ footer {
   font-weight: 600;
 }
 
-/* Sticky offer bar */
-.sticky-offer-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to bottom, #f9d65c, #f0b933);
-  text-align: center;
-  padding: 12px 20px;
-  z-index: 9999; /* keeps it above all content */
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
-}
 
-.sticky-offer-bar a {
-  color: #1f1f1f;
-  font-weight: 800;
-  font-size: 16px;
-  text-decoration: none;
-  letter-spacing: .5px;
-}
 
-.sticky-offer-bar a:hover {
-  text-decoration: underline;
-}
+
 
 .em-link {
   color: #0066cc;              /* blue link color */
@@ -814,9 +772,6 @@ body {
   border-radius: 8px;
 }
 
-/* sticky bar comfortable size */
-.sticky-offer-bar { padding: 10px 16px; }
-.sticky-offer-bar a  { font-size: clamp(14px, 1.6vw, 16px); }
 
 /* consistent spacing between paragraphs inside cards */
 .story-block p + p,
@@ -1039,31 +994,6 @@ strong {
   color: #2E2E2E;
 }
 
-.sticky-offer-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to bottom, #f9d65c, #f0b933);
-  text-align: center;
-  padding: 6px 14px;              /* slightly taller than before */
-  z-index: 9999;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
-  font-weight: normal;            /* not bold */
-  font-size: 15px;                /* readable size */
-  letter-spacing: .3px;
-  color: #1f1f1f;
-  text-decoration: none;
-  display: block;
-  border-top: 6px solid #fff;     /* thick white border */
-  border-bottom: 6px solid #fff;  /* thick white border */
-}
-
-.sticky-offer-bar:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 
 .subtext em {
   font-size: clamp(20px, 1.6vw, 24px) !important; /* a little smaller than big <p> */
@@ -1097,105 +1027,102 @@ strong {
   margin: 0 auto;
   text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Sticky Offer Bar – single source of truth === */
 .sticky-offer-bar {
   position: fixed;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(14px); /* hidden offset for animate-in */
   background: linear-gradient(to bottom, #f9d65c, #f0b933);
   text-align: center;
   padding: 12px 20px;
-  z-index: 9999;
+  z-index: 10000;
   box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
   border-radius: 12px;
+  width: 95%;
+  max-width: 1400px;
+
+  /* reveal animation */
   opacity: 0;
   pointer-events: none;
-  transition: opacity .3s ease, transform .3s ease;
-  
-  width: 95%;      /* reduced from full width */
-  max-width: 1400px;
+  transition: opacity .25s ease, transform .25s ease;
 }
-
 .sticky-offer-bar.is-visible {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
 
+/* Make the whole bar clickable */
 .sticky-offer-bar a {
+  display: block;              /* fills the bar */
+  width: 100%;
+  text-decoration: none;
   color: #1f1f1f;
   font-weight: 600;
   font-size: clamp(15px, 1.8vw, 18px);
-  text-decoration: none;
   letter-spacing: .5px;
-  display: block;
+
+  /* WRAPPING */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.35;
 }
+.sticky-offer-bar:hover a { text-decoration: underline; }
 
-/* Sticky bar: hidden by default, fades/slides in when visible */
-.sticky-offer-bar {
-  /* your existing styles stay */
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-50%) translateY(14px);
-  transition: opacity .25s ease, transform .25s ease;
-}
+/* Optional “footer-like” white strip behind on mobile */
+.sticky-offer-footer { display:none; }
 
-/* When JS adds this class, the bar shows */
-.sticky-offer-bar.is-visible {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-  pointer-events: auto;
-}
-
-/* Motion accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .sticky-offer-bar {
-    transition: none;
-  }
-}
-
-
-
-/* Mobile adjustment: sticky bar flush with bottom */
+/* === Mobile tweaks === */
 @media (max-width: 768px) {
-  .sticky-offer-bar {
-    bottom: 0;                  /* sit right at the bottom */
-    border-radius: 0;            /* remove bottom curve so it’s flush */
-    border-top: 10px solid #fff; /* thick white border above the bar */
-    width: 100%;                 /* stretch full width on mobile */
-    max-width: none;
-  }
-}
-
-
-/* Mobile adjustment: sticky bar with footer-like white background */
-@media (max-width: 768px) {
-  body {
-    padding-bottom: 80px; /* reserve space for the footer area */
-  }
-
-  .sticky-offer-bar {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    max-width: none;
-    border-radius: 0;
-    padding: 14px 20px;
-    
-    /* put it above the footer strip */
-    position: fixed;
-    z-index: 10000;
-  }
-
   /* white footer strip behind the bar */
   .sticky-offer-footer {
+    display: block;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;      /* adjust for desired footer height */
+    bottom: 0; left: 0; right: 0;
+    height: 70px;
     background: #fff;
-    z-index: 9998;     /* just behind the yellow bar */
+    z-index: 9998;
   }
+
+  /* reserve space so content isn’t hidden under the footer area */
+  body { padding-bottom: 90px; }
+
+  .sticky-offer-bar {
+    bottom: 0;                  /* stick to bottom edge */
+    left: 0; right: 0;          /* full width of screen */
+    transform: translateY(14px);/* hidden offset for animate-in */
+    border-radius: 0;           /* flush edges */
+    width: 100%;
+    max-width: none;
+    padding: 10px 12px;
+    border-top: 10px solid #fff;/* white “border” above bar */
+    border-bottom: 0;
+  }
+  .sticky-offer-bar.is-visible {
+    transform: translateY(0);
+  }
+
+  .sticky-offer-bar a {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .sticky-offer-bar { transition: none; }
 }
