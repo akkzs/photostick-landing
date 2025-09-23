@@ -1156,3 +1156,13 @@ strong {
 
 
 
+/* Mobile adjustment: sticky bar flush with bottom */
+@media (max-width: 768px) {
+  .sticky-offer-bar {
+    bottom: 0;                  /* sit right at the bottom */
+    border-radius: 0;            /* remove bottom curve so it’s flush */
+    border-top: 10px solid #fff; /* thick white border above the bar */
+    width: 100%;                 /* stretch full width on mobile */
+    max-width: none;
+  }
+}
