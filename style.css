@@ -264,6 +264,8 @@ footer {
   font-weight: bold;
   color: #222;
   margin-bottom: 20px;
+  font-size: clamp(26px, 5.2vw, 46px);
+  text-align: center;   /* now centered */
 }
 
 /* Hero Image */
@@ -979,7 +981,7 @@ strong {
      max-width: var(--col-max);
      margin-left: auto;
      margin-right: auto;
-     text-align: left;          /* ensure same left edge */
+     text-align: center;          /* ensure same left edge */
    }
    
    /* Make the *next* section start closer and aligned */
@@ -1095,4 +1097,62 @@ strong {
   margin: 0 auto;
   text-align: center;
 }
+.sticky-offer-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, #f9d65c, #f0b933);
+  text-align: center;
+  padding: 12px 20px;
+  z-index: 9999;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease;
+  
+  width: 95%;      /* reduced from full width */
+  max-width: 1400px;
+}
+
+.sticky-offer-bar.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.sticky-offer-bar a {
+  color: #1f1f1f;
+  font-weight: 600;
+  font-size: clamp(15px, 1.8vw, 18px);
+  text-decoration: none;
+  letter-spacing: .5px;
+  display: block;
+}
+
+/* Sticky bar: hidden by default, fades/slides in when visible */
+.sticky-offer-bar {
+  /* your existing styles stay */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(14px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+/* When JS adds this class, the bar shows */
+.sticky-offer-bar.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+/* Motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .sticky-offer-bar {
+    transition: none;
+  }
+}
+
+
 

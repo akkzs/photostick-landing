@@ -448,13 +448,51 @@
 
 
   </main>
-  <a href="https://photostickomni.thecleverfind.com/offer-03/?lpid=2129&source_id=DL&utm_source=30644&utm_medium=&utm_term=623&aff_id=30644&sub_id=&req_id=&oid=623&device_type=&country_name=&oid=623&affid=30644&uid=2129&altdomain=photostickomni.thecleverfind.com" 
-  target="_blank" rel="noopener noreferrer" 
-  class="sticky-offer-bar">
- GET UP TO 40% OFF NOW
-</a>
+  <div class="sticky-offer-bar">
+    <a href="https://photostickomni.thecleverfind.com/offer-03/?lpid=2129&source_id=DL&utm_source=30644&utm_medium=&utm_term=623&aff_id=30644&sub_id=&req_id=&oid=623&device_type=&country_name=&oid=623&affid=30644&uid=2129&altdomain=photostickomni.thecleverfind.com" 
+       target="_blank" rel="noopener noreferrer">
+      FÅ UPP TILL 40% RABATT NU
+    </a>
+  </div>
   
+  <div class="sticky-offer-bar">
+    <a href="https://photostickomni.thecleverfind.com/offer-03/?lpid=2129&source_id=DL&utm_source=30644&utm_medium=&utm_term=623&aff_id=30644&sub_id=&req_id=&oid=623&device_type=&country_name=&oid=623&affid=30644&uid=2129&altdomain=photostickomni.thecleverfind.com"
+       target="_blank" rel="noopener noreferrer">
+      FÅ UPP TILL 40% RABATT NU
+    </a>
+  </div>
   
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const bar = document.querySelector(".sticky-offer-bar");
+      if (!bar) return;
+    
+      const SHOW_AFTER = 80;             // pixels scrolled before showing
+      const HIDE_BOTTOM_THRESHOLD = 120; // pixels from bottom to hide
+    
+      function updateBar() {
+        const scrollY = window.scrollY;
+        const viewportH = window.innerHeight;
+        const docH = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        );
+        const fromBottom = docH - (scrollY + viewportH);
+    
+        if (scrollY > SHOW_AFTER && fromBottom > HIDE_BOTTOM_THRESHOLD) {
+          bar.classList.add("is-visible");
+        } else {
+          bar.classList.remove("is-visible");
+        }
+      }
+    
+      window.addEventListener("scroll", updateBar, { passive: true });
+      window.addEventListener("resize", updateBar, { passive: true });
+    
+      updateBar(); // run on load
+    });
+    </script>
+      
 
 </body>
 </html>
