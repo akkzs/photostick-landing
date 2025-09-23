@@ -49,12 +49,7 @@
   transform: translateY(-2px);
 }
 
-.hero-image {
-  width: 100%;
-  max-width: 1050px;
-  border-radius: 8px;
-  margin-top: 20px;
-}
+
 
 /* === Content Blocks === */
 .content-block {
@@ -184,14 +179,6 @@ footer {
 
 
 
-/* Advertorial Label */
-.advertorial-label {
-  text-transform: uppercase;
-  font-size: 12px;
-  color: #888;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-}
 
 
 
@@ -481,11 +468,6 @@ footer {
 
 
 
-/* outer wrapper a bit wider (visual breathing room) */
-.advertorial-page {
-  max-width: 860px;
-  padding: 24px 20px 40px;
-}
 
 /* white “card” sections match column width */
 .hero-section,
@@ -556,12 +538,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
-/* keep hero wider */
-.hero-section {
-  max-width: 1100px !important;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 /* 2) Let the hero image be bigger than content images */
 .what-is-figure img,
@@ -804,24 +781,8 @@ h1, h2, h3, h4, h5, h6,
   font-family: 'Halant', Georgia, "Times New Roman", serif;
   font-weight: 700; /* default weight — adjust as needed */
 }
-/* Body text, UI, paragraphs */
-body,
-p,
-.subtext,
-.body-text,
-.story-block,
-.what-is,
-.how-it-works,
-.all-files,
-.bottom-line,
-.love-points-box,
-.as-seen,
-.real-reviews,
-.cta-button a {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.75;
-  color: #274E53;   /* site-wide text color */
-}
+
+
 
 /* Headings (hero, section titles) */
 .hero-title,
@@ -911,3 +872,16 @@ p,
   background: linear-gradient(to bottom, #f9d65c, #f0b933);
   transition: background-size 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
+/* Round the hero image corners */
+.hero-image {
+  border-radius: 12px;
+  overflow: hidden;      /* ensures the image respects the rounded wrapper */
+}
+
+.hero-image img {
+  border-radius: inherit; /* or set 12px directly */
+  display: block;         /* removes any tiny gaps */
+}
+
+.hero-image img { border-radius: 12px !important; }
