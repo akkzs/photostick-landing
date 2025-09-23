@@ -1040,130 +1040,68 @@ strong {
 
 
 /* === Sticky Offer Bar – single source of truth === */
-.sticky-offer-bar {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%) translateY(14px); /* hidden offset for animate-in */
-  background: linear-gradient(to bottom, #f9d65c, #f0b933);
-  text-align: center;
-  padding: 12px 20px;
-  z-index: 10000;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
-  border-radius: 12px;
-  width: 95%;
-  max-width: 1400px;
+/* === Sticky Offer Bar (footer background + pill button) === */
 
-  /* reveal animation */
+/* White footer “shelf” that the pill sits on */
+.sticky-offer-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 96px;                           /* white background height */
+  background: #fff;                        /* only the shelf is white */
+  box-shadow: 0 -2px 10px rgba(0,0,0,.04); /* soft lift */
+  z-index: 10000;
+
+  /* safe area for iOS */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-bottom: constant(safe-area-inset-bottom, 0px);
+
+  /* reveal animation (we toggle this on the FOOTER) */
+  transform: translateY(14px);
   opacity: 0;
   pointer-events: none;
   transition: opacity .25s ease, transform .25s ease;
 }
-.sticky-offer-bar.is-visible {
+.sticky-offer-footer.is-visible {
+  transform: translateY(0);
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
 
-/* Make the whole bar clickable */
+/* The yellow pill button */
+.sticky-offer-bar {
+  position: absolute;
+  left: 50%;
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  bottom: calc(12px + constant(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  width: min(92vw, 680px);
+  border-radius: 14px;
+  background: linear-gradient(to bottom, #f9d65c, #f0b933);
+  padding: 14px 24px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  z-index: 10001; /* above the white shelf */
+}
+
 .sticky-offer-bar a {
-  display: block;              /* fills the bar */
-  width: 100%;
+  display: block;
   text-decoration: none;
   color: #1f1f1f;
-  font-weight: 600;
-  font-size: clamp(15px, 1.8vw, 18px);
-  letter-spacing: .5px;
-
-  /* WRAPPING */
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  font-weight: 700;
+  font-size: 16px;
   line-height: 1.35;
+  letter-spacing: .5px;
 }
-.sticky-offer-bar:hover a { text-decoration: underline; }
 
-/* Optional “footer-like” white strip behind on mobile */
-.sticky-offer-footer { display:none; }
-
-/* === Mobile tweaks === */
-@media (max-width: 768px) {
-  /* white footer strip behind the bar */
-  .sticky-offer-footer {
-    display: block;
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    height: 70px;
-    background: #fff;
-    z-index: 9998;
-  }
-
-  /* reserve space so content isn’t hidden under the footer area */
-  body { padding-bottom: 90px; }
-
-  .sticky-offer-bar {
-    bottom: 0;                  /* stick to bottom edge */
-    left: 0; right: 0;          /* full width of screen */
-    transform: translateY(14px);/* hidden offset for animate-in */
-    border-radius: 0;           /* flush edges */
-    width: 100%;
-    max-width: none;
-    padding: 10px 12px;
-    border-top: 10px solid #fff;/* white “border” above bar */
-    border-bottom: 0;
-  }
-  .sticky-offer-bar.is-visible {
-    transform: translateY(0);
-  }
-
-  .sticky-offer-bar a {
-    font-size: 14px;
-    line-height: 1.4;
-  }
+/* Keep content clear of the footer area while reading */
+body {
+  padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(110px + constant(safe-area-inset-bottom, 0px));
 }
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .sticky-offer-bar { transition: none; }
+  .sticky-offer-footer { transition: none; }
 }
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .sticky-offer-bar { transition: none; }
-}
-
-/* ========================================= */
-/* === NEW MOBILE FLOATING PILL OVERRIDE === */
-/* ========================================= */
-@media (max-width: 768px) {
-  .sticky-offer-bar {
-    position: fixed;
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%) translateY(14px);
-    width: min(92vw, 680px) !important;
-    border-radius: 14px !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,.18);
-    bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
-    bottom: calc(10px + constant(safe-area-inset-bottom, 0px)) !important;
-    padding: 12px 18px !important;
-  }
-
-  .sticky-offer-bar.is-visible {
-    transform: translateX(-50%) translateY(0);
-  }
-
-  .sticky-offer-bar a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    line-height: 1.35;
-  }
-
-  body {
-    padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px)) !important;
-    padding-bottom: calc(90px + constant(safe-area-inset-bottom, 0px)) !important;
-  }
-
-  .sticky-offer-footer { display: none !important; }
-}
-/* ========================================= */
