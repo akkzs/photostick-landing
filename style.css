@@ -913,8 +913,7 @@ p,
 @media (max-width: 991.98px) {
   .hero .cta-btn,
   .cta-final .cta-btn,
-  .cta-button a,
-  .sticky-offer-bar a {
+  .cta-button a {
     width: 100%;
     max-width: 420px;    /* caps size so they don't look huge */
     height: auto;
