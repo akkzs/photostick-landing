@@ -910,51 +910,5 @@ p,
 
 /* Put this AFTER any earlier .as-seen-logos img rules */
 
-/* Mobile-first: shrink nicely on small screens */
-.as-seen-logos img {
-  width: min(90vw, 420px); /* caps size on mobile */
-  height: auto;
-  display: block;
-}
-
-/* Desktop: keep your original size */
-@media (min-width: 992px) {
-  .as-seen-logos img {
-    width: 520px;   /* or whatever you prefer on desktop */
-  }
-}
-
-
-
-/* ===== Desktop (keep EXACT computed look) ===== */
-@media (min-width: 992px) {
-  .cta-button a {
-    display: inline-block;
-    box-sizing: border-box;
-    cursor: pointer;
-
-    /* from your computed styles */
-    width: 646px;
-    height: 78px;               /* ~78.3958px is fine to round */
-    padding: 20px 10px;
-    border-radius: 10px;
-
-    font-family: Inter, sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 38.4px;
-    letter-spacing: 0.2px;
-    text-align: center;
-    text-decoration: none;
-
-    color: #1f1f1f;
-    background: linear-gradient(to bottom, #f9d65c, #f0b933);
-    background-clip: border-box;
-    background-origin: padding-box;
-    background-repeat: repeat;
-
-    transition: background-size 0.3s ease-in-out, color 0.3s ease-in-out;
-  }
-}
 
 
