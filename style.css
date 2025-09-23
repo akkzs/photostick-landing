@@ -908,7 +908,24 @@ p,
 
 .hero-image img { border-radius: 12px !important; }
 
-/* Put this AFTER any earlier .as-seen-logos img rules */
+
+/* === Mobile & Tablet: shrink ALL CTA buttons === */
+@media (max-width: 991.98px) {
+  .hero .cta-btn,
+  .cta-final .cta-btn,
+  .cta-button a,
+  .sticky-offer-bar a {
+    width: 100%;
+    max-width: 420px;    /* caps size so they don't look huge */
+    height: auto;
+    padding: 14px 16px;
+    font-size: clamp(16px, 5vw, 18px);
+    line-height: 1.3;
+    display: inline-block;
+    margin: 0 auto;
+  }
+}
+
 
 
 
