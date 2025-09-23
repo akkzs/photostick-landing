@@ -1166,3 +1166,36 @@ strong {
     max-width: none;
   }
 }
+
+
+/* Mobile adjustment: sticky bar with footer-like white background */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 80px; /* reserve space for the footer area */
+  }
+
+  .sticky-offer-bar {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+    padding: 14px 20px;
+    
+    /* put it above the footer strip */
+    position: fixed;
+    z-index: 10000;
+  }
+
+  /* white footer strip behind the bar */
+  .sticky-offer-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;      /* adjust for desired footer height */
+    background: #fff;
+    z-index: 9998;     /* just behind the yellow bar */
+  }
+}
