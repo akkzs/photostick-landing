@@ -908,7 +908,22 @@ p,
 
 .hero-image img { border-radius: 12px !important; }
 
-.as-seen-logos img { width: 520px; height: auto; }
+/* Put this AFTER any earlier .as-seen-logos img rules */
+
+/* Mobile-first: shrink nicely on small screens */
+.as-seen-logos img {
+  width: min(90vw, 420px); /* caps size on mobile */
+  height: auto;
+  display: block;
+}
+
+/* Desktop: keep your original size */
+@media (min-width: 992px) {
+  .as-seen-logos img {
+    width: 520px;   /* or whatever you prefer on desktop */
+  }
+}
+
 
 
 /* ===== Desktop (keep EXACT computed look) ===== */
