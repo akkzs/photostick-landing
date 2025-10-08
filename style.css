@@ -932,5 +932,33 @@ p,
   margin-right: auto;
 }
 
+/* === Keep "all-files" and following sections aligned with main column === */
+.all-files,
+.bottom-line,
+.love-heading-box,
+.love-points-box,
+.as-seen,
+.promo-banner,
+.real-reviews {
+  max-width: var(--col-max) !important;  /* same width as story-block */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: left !important;           /* ensure left alignment for h2 + p */
+}
+
+/* Make the H2 and paragraphs inside start from the left */
+.all-files h2,
+.bottom-line h2,
+.love-heading-title,
+.as-seen h2,
+.real-reviews h2,
+.all-files p,
+.bottom-line p,
+.as-seen p,
+.real-reviews p {
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
 
 
